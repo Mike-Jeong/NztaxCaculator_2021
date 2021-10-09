@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -80,9 +80,223 @@ namespace Assessment2_627
 
     class System_1 : User
     {
+        public string TaxCode_Classification()
+        {
+            Q0:
+            Console.Clear();
+            Console.WriteLine("For this feature, user must use one of (yes,y/no,n) only");
+            Console.WriteLine("Do you receive an income tested benefit?");
+            string answer = Console.ReadLine();
+            string tc;
 
-      
+            if (answer == "yes" || answer == "y")
+            {
+                Q1:
+                Console.Clear();
+                Console.WriteLine("Is this tax code for the income tested benefit?");
+                answer = Console.ReadLine();
 
+                if (answer == "yes" || answer == "y")
+                {
+                    Console.WriteLine("Your tax code for primary income is 'M'");
+                    tc = "M";
+                    return tc;
+                }
+                else if (answer == "no" || answer == "n")
+                {
+                    Console.WriteLine("To identify your tax code, secondary income is needed");
+                    tc = "n";
+                    return tc;
+                }
+                else
+                {
+                    Console.WriteLine("Please choose one of yes or no");
+                    Console.ReadLine();
+                    goto Q1;
+
+                }
+            }
+            else if (answer == "no" || answer == "n")
+            {
+                Q2:
+                Console.Clear();
+                Console.WriteLine("Is this tax code for your main or highest dource of income?");
+                answer = Console.ReadLine();
+
+                if (answer == "yes" || answer == "y")
+                {
+                    Q3:
+                    Console.Clear();
+                    Console.WriteLine("Are you a New Zealand tax resident?");
+                    answer = Console.ReadLine();
+
+                    if (answer == "yes" || answer == "y")
+                    {
+                        Q4:
+                        Console.Clear();
+                        Console.WriteLine("Is your annual income likely to be between $24,000 and $48,000?");
+                        answer = Console.ReadLine();
+
+                        if (answer == "yes" || answer == "y")
+                        {
+                            Q5:
+                            Console.Clear();
+                            Console.WriteLine("Are you or your partner entitled to Working for Families Tax Credits or an overseas equivalent or do you receive NZ Super, veteran's pension or an overseas equivalent?");
+                            answer = Console.ReadLine();
+
+                            if (answer == "yes" || answer == "y")
+                            {
+                                Q9:
+                                Console.Clear();
+                                Console.WriteLine("Do you have a New Zealand student loan?");
+                                answer = Console.ReadLine();
+
+                                if (answer == "yes" || answer == "y")
+                                {
+                                    Console.WriteLine("Your tax code for primary income is 'M SL'");
+                                    tc = "M SL";
+                                    return tc;
+                                }
+                                else if (answer == "no" || answer == "n")
+                                {
+                                    Console.WriteLine("your tax code for primary income is 'M'");
+                                    tc = "M";
+                                    return tc;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Please choose one of yes or no");
+                                    Console.ReadLine();
+                                    goto Q9;
+
+                                }
+                            }
+                            else if (answer == "no" || answer == "n")
+                            {
+
+                                Q8:
+                                Console.Clear();
+                                Console.WriteLine("Do you have a New Zealand student loan?");
+                                answer = Console.ReadLine();
+
+                                if (answer == "yes" || answer == "y")
+                                {
+
+                                    Console.WriteLine("Your tax code for primary income is 'ME SL'");
+                                    tc = "ME SL";
+                                    return tc;
+                                }
+                                else if (answer == "no" || answer == "n")
+                                {
+                                    Console.WriteLine("your tax code for primary income is 'ME'");
+                                    tc = "ME";
+                                    return tc;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Please choose one of yes or no");
+                                    Console.ReadLine();
+                                    goto Q8;
+
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("Please choose one of yes or no");
+                                Console.ReadLine();
+                                goto Q5;
+
+                            }
+                        }
+                        else if (answer == "no" || answer == "n")
+                        {
+                            Q6:
+                            Console.Clear();
+                            Console.WriteLine("Do you have a New Zealand student loan?");
+                            answer = Console.ReadLine();
+
+                            if (answer == "yes" || answer == "y")
+                            {
+                                Console.WriteLine("Your tax code for primary income is 'M SL'");
+                                tc = "M SL";
+                                return tc;
+                            }
+                            else if (answer == "no" || answer == "n")
+                            {
+                                Console.WriteLine("your tax code for primary income is 'M'");
+                                tc = "M";
+                                return tc;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Please choose one of yes or no");
+                                Console.ReadLine();
+                                goto Q6;
+
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please choose one of yes or no");
+                            Console.ReadLine();
+                            goto Q4;
+
+                        }
+                    }
+                    else if (answer == "no" || answer == "n")
+                    {
+                        Q7:
+                        Console.Clear();
+                        Console.WriteLine("Do you have a New Zealand student loan?");
+                        answer = Console.ReadLine();
+
+                        if (answer == "yes" || answer == "y")
+                        {
+                            Console.WriteLine("Your tax code for primary income is 'M SL'");
+                            tc = "M SL";
+                            return tc;
+                        }
+                        else if (answer == "no" || answer == "n")
+                        {
+                            Console.WriteLine("your tax code for primary income is 'M'");
+                            tc = "M";
+                            return tc;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please choose one of yes or no");
+                            Console.ReadLine();
+                            goto Q7;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please choose one of yes or no");
+                        Console.ReadLine();
+                        goto Q3;
+                    }
+                }
+                else if (answer == "no" || answer == "n")
+                {
+                    Console.WriteLine("To identify your tax code, secondary income is needed");
+                    tc = "n";
+                    return tc;
+                }
+                else
+                {
+                    Console.WriteLine("Please choose one of yes or no");
+                    Console.ReadLine();
+                    goto Q2;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please choose one of yes or no");
+                Console.ReadLine();
+                goto Q0;
+
+            }
+        }
     }
 
     class System_2 : User
